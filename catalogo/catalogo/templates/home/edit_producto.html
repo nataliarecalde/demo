@@ -1,0 +1,16 @@
+{% extends 'base.html'%}
+	
+{% block title %}
+	<title>Editar Productos</title>
+{% endblock %}
+
+{% block content %}
+	<form action="." method = "POST" enctype = "multipart/form-data">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<button type="submit" class="btn btn-success">Guardar</button>
+		<input class="btn bnt-info" type = "reset" value = "Limpiar">
+	</form>
+	{{ info }}
+{% endblock %}
+
