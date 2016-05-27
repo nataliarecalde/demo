@@ -1,14 +1,16 @@
-{% extends 'base.html'%}
-	
-{% block title %}
-	Contactanos
+{% extends 'base.html' %}
+
+{% block title %} 
+	Contactanos 
 {% endblock %}
 
 {% block content %}
 	<form action="." method = "POST">
 		{% csrf_token %}
 		{{ form.as_p }}
-		<input class="btn btn-inverse" type = "submit" value = "submit"/>
+		<button class="btn btn-primary" type = "submit" > Enviar </button>
+		<input class="btn btn-inverse" type="reset" value="Limpiar">
 	</form>
 {% endblock %}
+
 

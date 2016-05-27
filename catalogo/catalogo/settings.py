@@ -23,7 +23,7 @@ DATABASES = {
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = ['catanata.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -33,7 +33,7 @@ TIME_ZONE = 'America/Chicago'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-CO'
 
 SITE_ID = 1
 
@@ -61,7 +61,9 @@ MEDIA_URL = '/media/'
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/var/www/example.com/static/"
+
 STATIC_ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__),'static/'))
+
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
@@ -83,7 +85,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = 'ww(_ic3xi$j8o&)n)45-+5$@#z9by7h(r7fq55n3c0j^yq8rxy'
+SECRET_KEY = '%)dz$dyq+r-wgh#lim%qv2t=@czd^zn5i@u8^q#5oa_1@zw(-8'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -121,22 +123,16 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'catalogo.apps.home',
-    'catalogo.apps.ventas',
-    'catalogo.apps.webservices.ws_productos',
     # Uncomment the next line to enable the admin:
-     'django.contrib.admin',
+    'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     'django.contrib.admindocs',
-    'catalogo.apps.ventas',
+    'catalogo.apps.ventas', #aplicacion de ventas
     'catalogo.apps.webservices.ws_productos',
     'rest_framework',
     'gunicorn',
-    #'dajaxice',
-    #'dajax',
-    # 'django.contrib.admindocs',
 )
-AUTH_PROFILE_MODULE = 'home.user_profile'
+
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
 
 # A sample logging configuration. The only tangible logging
@@ -167,20 +163,19 @@ LOGGING = {
         },
     }
 }
-# AQUI VA LA CONFIGURACION DEL SERVIDOR DE CORREO GMAIL
+
+"""
+# Aqui va la configuracion del servidor de correo  GMAIL
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST = '587'
-EMAIL_HOST_USER = 'micorreo@gmail.com'#ponen su CORREO
-EMAIL_HOST_PASSWORD = 'miclave'#poner la clave de su CORREO
-EMAIL_USE_TLS = True
+EMAIL_PORT = '587'
+EMAIL_HOST_USER = 'kaoxdc@gmail.com' #ponen su correo
+EMAIL_HOST_PASSWORD = 'xxx' #poner la clave de su correo
+EMAIL_USE_TLS = True"""
 
 REST_FRAMEWORK = {
-
-    'DEFAULT_PERMISSION_CLASSES':[
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-
-
     ]
-    
-
 }
