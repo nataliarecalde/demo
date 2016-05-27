@@ -1,14 +1,16 @@
-{% extends 'base.html' %}
-
-{% block title %} 
-	Login 
+{% extends 'base.html'%}
+	
+{% block title %}
+	Login
 {% endblock %}
 
 {% block content %}
-	<form action="." method="POST" align="center">
+	<form action="." method = "POST" align = "center">
 		{% csrf_token %}
 		{{mensaje}}
 		{{form.as_p}}
-		<button class="btn btn-primary"> Ingresar </button>
+		
+		<input class="btn btn-inverse" type = "submit" value = "login">
 	</form>
+	{{ info }}
 {% endblock %}

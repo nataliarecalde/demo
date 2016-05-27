@@ -3,15 +3,16 @@ from catalogo.apps.ventas.models import Producto, Marca, Categoria
 
 class producto_serializer(serializers.HyperlinkedModelSerializer):
 	class Meta:
-		model  = Producto
-		fields = ('url','descripcion', 'status', 'nombre', 'imagen', 'precio', 'stock', 'marca', 'categorias',)
+		model = Producto
+		fields = ('url','descripcion','status','nombre','imagen','precio','stock','marca','categorias',)
+
 
 class marca_serializer(serializers.HyperlinkedModelSerializer):
 	class Meta:
-		model  = Marca
-		fields = ('url','nombre', )
+		model = Marca
+		fields = ('url','nombre',)
 
 class categoria_serializer(serializers.HyperlinkedModelSerializer):
 	class Meta:
-		model  = Categoria
-		fields = ('url','nombre', )   
+		model = Categoria
+		fields = ('url','nombre',)

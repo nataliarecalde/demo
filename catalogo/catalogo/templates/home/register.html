@@ -1,13 +1,14 @@
-{% extends 'base.html' %}
-
-{% block title %} 
-	Registro Nuevo usuario 
+{% extends "base.html" %}
+	
+{% block title %}
+	Registrate
 {% endblock %}
 
 {% block content %}
-	<form action="." method="POST" align="center">
+	<form action="." method = "POST">
 		{% csrf_token %}
-		{{form.as_p}}
-		<button class="btn btn-primary"> Registrar </button>
+		{{ form.as_p }}
+		<button class="btn btn-inverse" type = "submit" value = "submit">Registrarse</button>
 	</form>
 {% endblock %}
+

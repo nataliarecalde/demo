@@ -1,16 +1,14 @@
-# Create your views here.
 from django.http import HttpResponse
 from catalogo.apps.ventas.models import *
 from django.core import serializers
+from.serializer import producto_serializer, marca_serializer, categoria_serializer
+from rest_framework import viewsets
 
 
 def ws_productos_view(request):
-	data = serializers.serialize("json",Producto.objects.filter(status = True))
-	return HttpResponse(data, mimetype='application/json')
+	data = serializers.serialize("json",Producto.objects.filter(status = True)) 
+	return HttpResponse(data,mimetype= 'application/json')
 
-
-from .serializer import producto_serializer, marca_serializer, categoria_serializer					
-from rest_framework import viewsets
 
 class producto_viewset(viewsets.ModelViewSet):
 	queryset = Producto.objects.all()
