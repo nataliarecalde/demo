@@ -131,7 +131,7 @@ INSTALLED_APPS = (
     'catalogo.apps.ventas',
     'catalogo.apps.webservices.ws_productos',
     'rest_framework',
-    #'gunicorn',
+    'gunicorn',
     #'dajaxice',
     #'dajax',
     # 'django.contrib.admindocs',
