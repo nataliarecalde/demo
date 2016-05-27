@@ -10,16 +10,16 @@ class RegisterForm(forms.Form):
 	def clean_username(self):
 		username = self.cleaned_data['username']
 		try:
-			u = user.objects.get(username=username)
-		except User.DoesNotExit:
+			u = User.objects.get(username=username)
+		except User.DoesNotExist:
 			return username
 		raise forms.ValidationError('Nombre de usuario ya existe')
 
 	def clean_email(self):
 		email = self.cleaned_data['email']
 		try:
-			u = user.objects.get(email= email)
-		except user.DoesNotExit:
+			u = User.objects.get(email= email)
+		except User.DoesNotExist:
 			return email
 		raise forms.ValidationError('Email ya registrado ')
 
