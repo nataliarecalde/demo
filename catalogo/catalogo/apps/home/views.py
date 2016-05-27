@@ -3,7 +3,7 @@ from django.template import  RequestContext
 from catalogo.apps.home.forms import contact_form 
 from django.core.mail import EmailMultiAlternatives
 from catalogo.apps.ventas.models import Producto
-from catalogo.apps.home.forms import contact_form, Login_form
+from catalogo.apps.home.forms import contact_form, Login_form, RegisterForm
 from django.contrib.auth import login, logout, authenticate
 from django.http import HttpResponseRedirect
 from django.core.paginator import Paginator,EmptyPage,InvalidPage

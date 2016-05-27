@@ -11,7 +11,7 @@ class RegisterForm(forms.Form):
 		username = self.cleaned_data['username']
 		try:
 			u = user.objects.get(username=username)
-		except user.DoesNotExit:
+		except User.DoesNotExit:
 			return username
 		raise forms.ValidationError('Nombre de usuario ya existe')
 

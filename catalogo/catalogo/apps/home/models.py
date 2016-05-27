@@ -9,7 +9,7 @@ class user_profile(models.Model):
 
 
 	user   = models.OneToOneField(User)
-	photo   = models.ImageField(upload_to=url)
+	photo   = models.ImageField(upload_to=url, blank = True, null = True )
 	user   = models.CharField(max_length=30)
 	def __unicode__(self):
 		return self.user.username
